@@ -1,0 +1,24 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="container mt-4">
+  <h1 class="text-center mb-4 text-white">Photos</h1>
+  <div class="row">
+    {% for photo in photos %}
+    <div class="col-md-6 col-lg-4 mb-4">
+      <div class="card shadow-lg h-100">
+        <img
+          src="{{ photo.url }}"
+          class="card-img-top img-fluid"
+          style="height: 400px; object-fit: cover"
+          alt="{{ photo.title }}"
+        />
+        <div class="card-body bg-primary text-white">
+          <h5 class="card-title text-center">{{ photo.title }}</h5>
+          <small><b>Owner:</b> {{photo.username}}</small>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

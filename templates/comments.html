@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container mt-4">
+  <h1 class="text-center mb-4 text-white">Comments</h1>
+  <div class="row">
+    {% for comment in comments %}
+    <div class="col-md-6 col-lg-4 mb-4">
+      <div class="card bg-info text-white shadow-lg h-100">
+        <div class="card-body bg-primary">
+          <h5 class="card-title">{{ comment.name }}</h5>
+          <h6 class="card-subtitle mb-2">
+            Post Author: {{ comment.username }}
+          </h6>
+          <p class="card-text"><strong>Email:</strong> {{ comment.email }}</p>
+          <p class="card-text">
+            <strong>Post Title:</strong> {{ comment.title }}
+          </p>
+          <p class="card-text">{{ comment.body }}</p>
+        </div>
+        <div class="card-footer text-right">
+          <small class="text-white-50"
+            >Commented on {{ comment.date_commented }}</small
+          >
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

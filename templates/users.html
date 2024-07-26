@@ -1,0 +1,35 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container mt-4">
+  <h1 class="text-center text-light">Users</h1>
+  <div class="table-responsive">
+    <table class="table table-secondary table-bordered table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Username</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone</th>
+          <th scope="col">City</th>
+          <th scope="col">Street</th>
+          <th scope="col">Zipcode</th>
+          <th scope="col">Company</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for user in users %}
+        <tr>
+          <td>{{ user.name }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.phone }}</td>
+          <td>{{ user.city }}</td>
+          <td>{{ user.street }}</td>
+          <td>{{ user.zipcode }}</td>
+          <td>{{ user.company }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
